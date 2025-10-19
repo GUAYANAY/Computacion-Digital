@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversiones entre Bases - Computación Digital</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/conversiones.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Computación Digital</h1>
+            <nav class="navbar">
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Sistemas de Numeración
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conversiones.html">Conversiones entre Bases</a></li>
+                            <li><a href="sistema-binario.html">Sistema Binario</a></li>
+                            <li><a href="sistema-octal.html">Sistema Octal</a></li>
+                            <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
+                            <li><a href="operaciones-binarias.html">Operaciones Binarias</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Álgebra de Boole
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
+                            <li><a href="leyes-boole.html">Leyes de Boole</a></li>
+                            <li><a href="simplificacion.html">Simplificación de Expresiones</a></li>
+                            <li><a href="mapas-karnaugh.html">Mapas de Karnaugh</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Compuertas Lógicas
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
+                            <li><a href="compuerta-and.html">Compuerta AND</a></li>
+                            <li><a href="compuerta-or.html">Compuerta OR</a></li>
+                            <li><a href="compuerta-not.html">Compuerta NOT</a></li>
+                            <li><a href="compuertas-combinadas.html">Compuertas Combinadas</a></li>
+                            <li><a href="circuitos-combinacionales.html">Circuitos Combinacionales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="presentacion">
+                <h2>🔄 Conversor de Bases Numéricas</h2>
+                <p>
+                    Convierte números entre diferentes sistemas de numeración: binario, octal, 
+                    decimal y hexadecimal de forma rápida y sencilla.
+                </p>
+                <div class="info-box">
+                    <strong>💡 Conversión Automática:</strong> Solo ingresa el número y selecciona las bases. 
+                    ¡Compatible con decimales como 143.5₈, FF.8₁₆, 1010.101₂!
+                </div>
+            </div>
+
+            <!-- Conversor Interactivo -->
+            <div class="converter-container">
+                <div class="converter-card">
+                    <h3>🧮 Conversor Interactivo</h3>
+                    
+                    <div class="input-section">
+                        <div class="input-group">
+                            <label for="inputNumber">
+                                Número a convertir: 
+                                <span class="auto-indicator">⚡ Conversión automática</span>
+                            </label>
+                            <input type="text" id="inputNumber" placeholder="Ej: 255, FF.8, 1010.101, 143.5" 
+                                   class="number-input" maxlength="25">
+                            <div class="input-validation" id="validationMessage"></div>
+                        </div>
+
+                        <div class="base-selection">
+                            <div class="base-group">
+                                <label for="fromBase">Base de origen:</label>
+                                <select id="fromBase" class="base-select">
+                                    <option value="2">Binario (Base 2)</option>
+                                    <option value="8">Octal (Base 8)</option>
+                                    <option value="10" selected>Decimal (Base 10)</option>
+                                    <option value="16">Hexadecimal (Base 16)</option>
+                                </select>
+                            </div>
+
+                            <div class="conversion-arrow">➡️</div>
+
+                            <div class="base-group">
+                                <label for="toBase">Base de destino:</label>
+                                <select id="toBase" class="base-select">
+                                    <option value="2" selected>Binario (Base 2)</option>
+                                    <option value="8">Octal (Base 8)</option>
+                                    <option value="10">Decimal (Base 10)</option>
+                                    <option value="16">Hexadecimal (Base 16)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-section" id="resultSection">
+                        <h4>📊 Resultado:</h4>
+                        <div class="result-display" id="resultDisplay">
+                            <div class="result-number" id="resultNumber">Ingresa un número para ver la conversión</div>
+                            <div class="result-base" id="resultBase"></div>
+                        </div>
+                    </div>
+
+                    <div class="all-conversions" id="allConversions">
+                        <h4>🔢 Todas las conversiones:</h4>
+                        <div class="conversions-grid">
+                            <div class="conversion-item">
+                                <span class="conversion-label">Binario:</span>
+                                <span class="conversion-value" id="binaryResult">-</span>
+                            </div>
+                            <div class="conversion-item">
+                                <span class="conversion-label">Octal:</span>
+                                <span class="conversion-value" id="octalResult">-</span>
+                            </div>
+                            <div class="conversion-item">
+                                <span class="conversion-label">Decimal:</span>
+                                <span class="conversion-value" id="decimalResult">-</span>
+                            </div>
+                            <div class="conversion-item">
+                                <span class="conversion-label">Hexadecimal:</span>
+                                <span class="conversion-value" id="hexResult">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-explanation" id="processExplanation"></div>
+                </div>
+            </div>
+
+            <!-- Guía de Referencia -->
+            <div class="reference-section">
+                <h3>📚 Guía de Referencia Rápida</h3>
+                
+                <div class="reference-grid">
+                    <div class="reference-card">
+                        <h4>🔢 Sistema Binario (Base 2)</h4>
+                        <p><strong>Dígitos:</strong> 0, 1</p>
+                        <p><strong>Ejemplo:</strong> 1010₂ = 10₁₀</p>
+                        <p><strong>Uso:</strong> Computadoras, electrónica digital</p>
+                    </div>
+
+                    <div class="reference-card">
+                        <h4>🔢 Sistema Octal (Base 8)</h4>
+                        <p><strong>Dígitos:</strong> 0, 1, 2, 3, 4, 5, 6, 7</p>
+                        <p><strong>Ejemplo:</strong> 12₈ = 10₁₀</p>
+                        <p><strong>Uso:</strong> Programación, sistemas Unix</p>
+                    </div>
+
+                    <div class="reference-card">
+                        <h4>🔢 Sistema Decimal (Base 10)</h4>
+                        <p><strong>Dígitos:</strong> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9</p>
+                        <p><strong>Ejemplo:</strong> 10₁₀</p>
+                        <p><strong>Uso:</strong> Sistema numérico cotidiano</p>
+                    </div>
+
+                    <div class="reference-card">
+                        <h4>🔢 Sistema Hexadecimal (Base 16)</h4>
+                        <p><strong>Dígitos:</strong> 0-9, A, B, C, D, E, F</p>
+                        <p><strong>Ejemplo:</strong> A₁₆ = 10₁₀</p>
+                        <p><strong>Uso:</strong> Programación, colores web</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejemplos Paso a Paso -->
+            <div class="examples-section">
+                <h3>🎯 Ejemplos Paso a Paso</h3>
+                
+                <div class="example-tabs">
+                    <button class="tab-button active" data-tab="decimal-binary">Decimal → Binario</button>
+                    <button class="tab-button" data-tab="binary-decimal">Binario → Decimal</button>
+                    <button class="tab-button" data-tab="hex-decimal">Hex → Decimal</button>
+                </div>
+
+                <div class="tab-content active" id="decimal-binary">
+                    <div class="ejemplo">
+                        <h4>Convertir 25₁₀ a Binario</h4>
+                        <div class="step-by-step">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <span class="step-text">25 ÷ 2 = 12 resto <strong>1</strong></span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <span class="step-text">12 ÷ 2 = 6 resto <strong>0</strong></span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <span class="step-text">6 ÷ 2 = 3 resto <strong>0</strong></span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <span class="step-text">3 ÷ 2 = 1 resto <strong>1</strong></span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">5</span>
+                                <span class="step-text">1 ÷ 2 = 0 resto <strong>1</strong></span>
+                            </div>
+                            <div class="result-step">
+                                <strong>Resultado:</strong> Leer restos de abajo hacia arriba → <strong>11001₂</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="binary-decimal">
+                    <div class="ejemplo">
+                        <h4>Convertir 11001₂ a Decimal</h4>
+                        <div class="step-by-step">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <span class="step-text">1×2⁴ + 1×2³ + 0×2² + 0×2¹ + 1×2⁰</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <span class="step-text">1×16 + 1×8 + 0×4 + 0×2 + 1×1</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <span class="step-text">16 + 8 + 0 + 0 + 1</span>
+                            </div>
+                            <div class="result-step">
+                                <strong>Resultado:</strong> <strong>25₁₀</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="hex-decimal">
+                    <div class="ejemplo">
+                        <h4>Convertir 2F.8₁₆ a Decimal</h4>
+                        <div class="step-by-step">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <span class="step-text">2×16¹ + F×16⁰ + 8×16⁻¹</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <span class="step-text">2×16 + 15×1 + 8×0.0625</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <span class="step-text">32 + 15 + 0.5</span>
+                            </div>
+                            <div class="result-step">
+                                <strong>Resultado:</strong> <strong>47.5₁₀</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Computación Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/conversiones.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compuertas Básicas - Computación Digital</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Computación Digital</h1>
+            <nav class="navbar">
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Sistemas de Numeración
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conversiones.html">Conversiones entre Bases</a></li>
+                            <li><a href="sistema-binario.html">Sistema Binario</a></li>
+                            <li><a href="sistema-octal.html">Sistema Octal</a></li>
+                            <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
+                            <li><a href="operaciones-binarias.html">Operaciones Binarias</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Álgebra de Boole
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
+                            <li><a href="leyes-boole.html">Leyes de Boole</a></li>
+                            <li><a href="simplificacion.html">Simplificación de Expresiones</a></li>
+                            <li><a href="mapas-karnaugh.html">Mapas de Karnaugh</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Compuertas Lógicas
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
+                            <li><a href="compuerta-and.html">Compuerta AND</a></li>
+                            <li><a href="compuerta-or.html">Compuerta OR</a></li>
+                            <li><a href="compuerta-not.html">Compuerta NOT</a></li>
+                            <li><a href="compuertas-combinadas.html">Compuertas Combinadas</a></li>
+                            <li><a href="circuitos-combinacionales.html">Circuitos Combinacionales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="presentacion">
+                <h2>Compuertas Lógicas Básicas</h2>
+                <p>
+                    Las compuertas lógicas son dispositivos físicos que implementan las operaciones 
+                    del álgebra de Boole en circuitos electrónicos digitales.
+                </p>
+                
+                <h3>¿Qué son las Compuertas Lógicas?</h3>
+                <p>
+                    Las compuertas lógicas son circuitos electrónicos que realizan operaciones lógicas 
+                    sobre una o más señales de entrada binarias para producir una señal de salida binaria. 
+                    Son los bloques fundamentales de construcción de todos los sistemas digitales.
+                </p>
+
+                <h3>Compuertas Básicas</h3>
+                
+                <div class="ejemplo">
+                    <h4>Compuerta AND</h4>
+                    <p>Produce una salida alta (1) solo cuando todas las entradas son altas (1).</p>
+                    <pre>
+Símbolo: A ──┐
+             │ AND ── Y
+         B ──┘
+
+Ecuación: Y = A · B
+                    </pre>
+                </div>
+
+                <div class="ejemplo">
+                    <h4>Compuerta OR</h4>
+                    <p>Produce una salida alta (1) cuando al menos una entrada es alta (1).</p>
+                    <pre>
+Símbolo: A ──┐
+             │ OR ── Y
+         B ──┘
+
+Ecuación: Y = A + B
+                    </pre>
+                </div>
+
+                <div class="ejemplo">
+                    <h4>Compuerta NOT (Inversor)</h4>
+                    <p>Produce una salida que es el complemento de la entrada.</p>
+                    <pre>
+Símbolo: A ── NOT ── Y
+
+Ecuación: Y = Ā
+                    </pre>
+                </div>
+
+                <h3>Compuertas Derivadas</h3>
+                
+                <div class="ejemplo">
+                    <h4>Compuerta NAND</h4>
+                    <p>Es la negación de AND. Produce salida baja (0) solo cuando todas las entradas son altas.</p>
+                    <pre>
+Ecuación: Y = (A · B)'
+                    </pre>
+                </div>
+
+                <div class="ejemplo">
+                    <h4>Compuerta NOR</h4>
+                    <p>Es la negación de OR. Produce salida alta (1) solo cuando todas las entradas son bajas.</p>
+                    <pre>
+Ecuación: Y = (A + B)'
+                    </pre>
+                </div>
+
+                <h3>Aplicaciones</h3>
+                <p>
+                    Las compuertas lógicas se utilizan para construir:
+                </p>
+                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                    <li>Procesadores de computadoras</li>
+                    <li>Memoria de computadoras</li>
+                    <li>Controladores de dispositivos</li>
+                    <li>Sistemas de comunicación digital</li>
+                    <li>Dispositivos de automatización</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Computación Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

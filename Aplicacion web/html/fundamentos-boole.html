@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de Álgebra de Boole - Computación Digital</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Computación Digital</h1>
+            <nav class="navbar">
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Sistemas de Numeración
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conversiones.html">Conversiones entre Bases</a></li>
+                            <li><a href="sistema-binario.html">Sistema Binario</a></li>
+                            <li><a href="sistema-octal.html">Sistema Octal</a></li>
+                            <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
+                            <li><a href="operaciones-binarias.html">Operaciones Binarias</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Álgebra de Boole
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
+                            <li><a href="leyes-boole.html">Leyes de Boole</a></li>
+                            <li><a href="simplificacion.html">Simplificación de Expresiones</a></li>
+                            <li><a href="mapas-karnaugh.html">Mapas de Karnaugh</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Compuertas Lógicas
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
+                            <li><a href="compuerta-and.html">Compuerta AND</a></li>
+                            <li><a href="compuerta-or.html">Compuerta OR</a></li>
+                            <li><a href="compuerta-not.html">Compuerta NOT</a></li>
+                            <li><a href="compuertas-combinadas.html">Compuertas Combinadas</a></li>
+                            <li><a href="circuitos-combinacionales.html">Circuitos Combinacionales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="presentacion">
+                <h2>Fundamentos del Álgebra de Boole</h2>
+                <p>
+                    El álgebra de Boole es un sistema algebraico que opera con valores de verdad 
+                    (verdadero y falso) y es fundamental para el diseño de circuitos digitales.
+                </p>
+                
+                <h3>¿Qué es el Álgebra de Boole?</h3>
+                <p>
+                    Desarrollada por George Boole en 1854, el álgebra booleana es un sistema matemático 
+                    que trabaja con dos valores: 0 (falso) y 1 (verdadero). Este sistema es la base 
+                    de la lógica digital y los sistemas de computación.
+                </p>
+
+                <h3>Operadores Básicos</h3>
+                <p>
+                    Los tres operadores fundamentales del álgebra de Boole son:
+                </p>
+
+                <div class="ejemplo">
+                    <h4>1. Operador AND (·)</h4>
+                    <p>El resultado es verdadero solo cuando ambas entradas son verdaderas.</p>
+                    <pre>
+A · B = C
+
+Tabla de verdad:
+A | B | A·B
+--|---|----
+0 | 0 |  0
+0 | 1 |  0
+1 | 0 |  0
+1 | 1 |  1
+                    </pre>
+                </div>
+
+                <div class="ejemplo">
+                    <h4>2. Operador OR (+)</h4>
+                    <p>El resultado es verdadero cuando al menos una entrada es verdadera.</p>
+                    <pre>
+A + B = C
+
+Tabla de verdad:
+A | B | A+B
+--|---|----
+0 | 0 |  0
+0 | 1 |  1
+1 | 0 |  1
+1 | 1 |  1
+                    </pre>
+                </div>
+
+                <div class="ejemplo">
+                    <h4>3. Operador NOT (¯)</h4>
+                    <p>Invierte el valor de la entrada.</p>
+                    <pre>
+Ā = C
+
+Tabla de verdad:
+A | Ā
+--|---
+0 | 1
+1 | 0
+                    </pre>
+                </div>
+
+                <h3>Aplicaciones</h3>
+                <p>
+                    El álgebra de Boole se utiliza en:
+                </p>
+                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                    <li>Diseño de circuitos digitales</li>
+                    <li>Programación de computadoras</li>
+                    <li>Sistemas de bases de datos</li>
+                    <li>Motores de búsqueda</li>
+                    <li>Inteligencia artificial</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Computación Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
