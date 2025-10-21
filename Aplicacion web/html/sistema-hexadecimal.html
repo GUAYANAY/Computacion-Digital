@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Hexadecimal - Computación Digital</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Computación Digital</h1>
+            <nav class="navbar">
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Sistemas de Numeración
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conversiones.html">Conversiones entre Bases</a></li>
+                            <li><a href="sistema-binario.html">Sistema Binario</a></li>
+                            <li><a href="sistema-octal.html">Sistema Octal</a></li>
+                            <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Operaciones Binarias
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="suma-binaria.html">Suma de Números Binarios</a></li>
+                            <li><a href="resta-binaria.html">Resta de Números Binarios</a></li>
+                            <li><a href="multiplicacion-binaria.html">Multiplicación de Números Binarios</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Álgebra de Boole
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
+                            <li><a href="leyes-boole.html">Leyes de Boole</a></li>
+                            <li><a href="simplificacion.html">Simplificación de Expresiones</a></li>
+                            <li><a href="mapas-karnaugh.html">Mapas de Karnaugh</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Compuertas Lógicas
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
+                            <li><a href="compuerta-and.html">Compuerta AND</a></li>
+                            <li><a href="compuerta-or.html">Compuerta OR</a></li>
+                            <li><a href="compuerta-not.html">Compuerta NOT</a></li>
+                            <li><a href="compuertas-combinadas.html">Compuertas Combinadas</a></li>
+                            <li><a href="circuitos-combinacionales.html">Circuitos Combinacionales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="presentacion">
+                <h2>Sistema Hexadecimal</h2>
+                <p>
+                    El sistema hexadecimal es un sistema de numeración de base 16 ampliamente utilizado 
+                    en programación y ciencias de la computación por su compacta representación de valores binarios.
+                </p>
+                
+                <h3>¿Qué es el Sistema Hexadecimal?</h3>
+                <p>
+                    El sistema hexadecimal, también conocido como sistema de base 16, utiliza los dígitos del 0 al 9 
+                    y las letras de la A a la F para representar cualquier número. Cada posición en un número 
+                    hexadecimal representa una potencia de 16.
+                </p>
+
+                <h3>Conversión de Decimal a Hexadecimal</h3>
+                <p>
+                    Para convertir un número decimal a hexadecimal, dividimos sucesivamente entre 16 
+                    y tomamos los residuos en orden inverso.
+                </p>
+
+                <div class="ejemplo">
+                    <h4>Ejemplo: Convertir 255 a hexadecimal</h4>
+                    <pre>
+255 ÷ 16 = 15 residuo 15 (F)
+15 ÷ 16 = 0 residuo 15 (F)
+
+Leyendo los residuos de abajo hacia arriba: FF
+Por lo tanto, 255₁₀ = FF₁₆
+                    </pre>
+                </div>
+
+                <h3>Conversión de Hexadecimal a Decimal</h3>
+                <p>
+                    Para convertir de hexadecimal a decimal, multiplicamos cada dígito por la potencia 
+                    correspondiente de 16 y sumamos todos los resultados.
+                </p>
+
+                <div class="ejemplo">
+                    <h4>Ejemplo: Convertir A3₁₆ a decimal</h4>
+                    <pre>
+A3₁₆ = A×16¹ + 3×16⁰
+     = 10×16 + 3×1
+     = 160 + 3
+     = 163₁₀
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Computación Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
