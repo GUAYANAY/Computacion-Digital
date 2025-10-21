@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Octal - Computación Digital</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Computación Digital</h1>
+            <nav class="navbar">
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Sistemas de Numeración
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conversiones.html">Conversiones entre Bases</a></li>
+                            <li><a href="sistema-binario.html">Sistema Binario</a></li>
+                            <li><a href="sistema-octal.html">Sistema Octal</a></li>
+                            <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Operaciones Binarias
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="suma-binaria.html">Suma de Números Binarios</a></li>
+                            <li><a href="resta-binaria.html">Resta de Números Binarios</a></li>
+                            <li><a href="multiplicacion-binaria.html">Multiplicación de Números Binarios</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Álgebra de Boole
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
+                            <li><a href="leyes-boole.html">Leyes de Boole</a></li>
+                            <li><a href="simplificacion.html">Simplificación de Expresiones</a></li>
+                            <li><a href="mapas-karnaugh.html">Mapas de Karnaugh</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Compuertas Lógicas
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
+                            <li><a href="compuerta-and.html">Compuerta AND</a></li>
+                            <li><a href="compuerta-or.html">Compuerta OR</a></li>
+                            <li><a href="compuerta-not.html">Compuerta NOT</a></li>
+                            <li><a href="compuertas-combinadas.html">Compuertas Combinadas</a></li>
+                            <li><a href="circuitos-combinacionales.html">Circuitos Combinacionales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="presentacion">
+                <h2>Sistema Octal</h2>
+                <p>
+                    El sistema octal es un sistema de numeración de base 8 que utiliza los dígitos del 0 al 7.
+                    Es especialmente útil en computación por su relación directa con el sistema binario.
+                </p>
+
+                <h3>¿Qué es el Sistema Octal?</h3>
+                <p>
+                    El sistema octal, también conocido como sistema de base 8, utiliza únicamente
+                    los dígitos del 0 al 7 para representar cualquier número. Cada posición en un número
+                    octal representa una potencia de 8.
+                </p>
+
+                <h3>Conversión de Decimal a Octal</h3>
+                <p>
+                    Para convertir un número decimal a octal, dividimos sucesivamente entre 8
+                    y tomamos los residuos en orden inverso.
+                </p>
+
+                <div class="ejemplo">
+                    <h4>Ejemplo: Convertir 95 a octal</h4>
+                    <pre>
+95 ÷ 8 = 11 residuo 7
+11 ÷ 8 = 1 residuo 3
+1 ÷ 8 = 0 residuo 1
+
+Leyendo los residuos de abajo hacia arriba: 137
+Por lo tanto, 95₁₀ = 137₈
+                    </pre>
+                </div>
+
+                <h3>Conversión de Octal a Decimal</h3>
+                <p>
+                    Para convertir de octal a decimal, multiplicamos cada dígito por la potencia
+                    correspondiente de 8 y sumamos todos los resultados.
+                </p>
+
+                <div class="ejemplo">
+                    <h4>Ejemplo: Convertir 137₈ a decimal</h4>
+                    <pre>
+137₈ = 1×8² + 3×8¹ + 7×8⁰
+     = 1×64 + 3×8 + 7×1
+     = 64 + 24 + 7
+     = 95₁₀
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Computación Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
