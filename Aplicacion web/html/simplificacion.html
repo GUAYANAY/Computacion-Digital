@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplificación de Expresiones</title>
+    <link rel="stylesheet" href="../css/style.css">
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Computación Digital</h1>
+            <nav class="navbar">
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="../index.html" class="navbar-link">Inicio</a></li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle active">Sistemas de Numeración<i class="arrow-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conversiones.html">Conversiones entre Bases</a></li>
+                            <li><a href="sistema-binario.html">Sistema Binario</a></li>
+                            <li><a href="sistema-octal.html">Sistema Octal</a></li>
+                            <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle active">Operaciones Binarias<i class="arrow-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="suma-binaria.html">Suma de Números Binarios</a></li>
+                            <li><a href="resta-binaria.html">Resta de Números Binarios</a></li>
+                            <li><a href="multiplicacion-binaria.html">Multiplicación de Números Binarios</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle active">Álgebra de Boole<i class="arrow-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
+                            <li><a href="leyes-boole.html">Leyes de Boole</a></li>
+                            <li><a href="simplificacion.html" class="active">Simplificación de Expresiones</a></li>
+                            <li><a href="mapas-karnaugh.html">Mapas de Karnaugh</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle active">Compuertas Lógicas<i class="arrow-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
+                            <li><a href="compuerta-and.html">Compuerta AND</a></li>
+                            <li><a href="compuerta-or.html">Compuerta OR</a></li>
+                            <li><a href="compuerta-not.html">Compuerta NOT</a></li>
+                            <li><a href="compuertas-combinadas.html">Compuertas Combinadas</a></li>
+                            <li><a href="circuitos-combinacionales.html">Circuitos Combinacionales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="presentacion">
+                <h2>Simplificación de Expresiones Booleanas</h2>
+                <p>
+                    La simplificación de expresiones es el proceso de reducir una expresión lógica a su forma más sencilla,
+                    lo que resulta en un circuito digital más eficiente y con menos componentes.
+                </p>
+
+                <hr>
+
+                <h3>Herramienta de Simplificación (Simulación)</h3>
+                <p class="alerta-instruccion">Ingresa tu expresión. Usa <span class="boole-code">A-Z</span> para variables, <span class="boole-code">+</span> para OR, <span class="boole-code">·</span> para AND (o yuxtaposición), y <span class="boole-code">'</span> para NOT (negación).</p>
+
+                <div class="herramienta-container">
+
+                    <h4>Expresión Actual: <span class="expresion-actual" id="expr-actual">---</span></h4>
+
+                    <div class="input-group">
+                        <input type="text" id="expr" placeholder="Ejemplo: AB + AB' ">
+                        <button id="confirmar-expr">Iniciar/Actualizar</button>
+                    </div>
+
+                    <div id="leyes-botones-container" class="leyes-botones-container">
+                        <p>Ingresa una expresión y presiona Iniciar/Actualizar.</p>
+                    </div>
+
+                    <div class="acciones-historial">
+                        <button id="undo-btn" disabled>Deshacer</button>
+                     </div>
+
+                    <h4>Historial de Pasos</h4>
+                    <ul id="historial">
+                        </ul>
+                </div>
+
+                <hr>
+
+                <h3>Métodos de Simplificación</h3>
+                <p>Existen dos métodos principales para simplificar funciones booleanas:</p>
+
+                <h4>1. Simplificación Algebraica</h4>
+                <p>Se utiliza aplicando directamente las <strong>Leyes de Boole</strong> para eliminar términos redundantes o agrupar variables.</p>
+
+                <h4>2. Mapas de Karnaugh</h4>
+                <p>Un método visual y sistemático para simplificar expresiones con hasta cuatro o cinco variables.</p>
+
+                <h3>Ejemplo de Simplificación (Algebraica)</h3>
+                <p>Simplificar la función: F = AB + AB' </p>
+                <ol style="text-align: left; max-width: 700px; margin: 1rem auto;">
+                    <li>F = A(B + B') (Ley Distributiva)</li>
+                    <li>F = A · 1 (Ley de Complemento: B + B' = 1)</li>
+                    <li>F = A (Ley de Identidad: A · 1 = A)</li>
+                </ol>
+                <p>La expresión final simplificada es <strong>F = A</strong>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Computación Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/simplificacion.js"></script>
+</body>
+</html>
