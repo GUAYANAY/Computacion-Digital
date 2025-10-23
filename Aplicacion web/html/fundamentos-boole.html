@@ -21,25 +21,26 @@
                         <a href="../index.html" class="navbar-link">Inicio</a>
                     </li>
                     <li class="navbar-item dropdown">
-                        <a href="#" class="navbar-link dropdown-toggle">
-                            Sistemas de Numeración
-                            <i class="arrow-down"></i>
-                        </a>
+                        <a href="#" class="navbar-link dropdown-toggle active">Sistemas de Numeración<i class="arrow-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="conversiones.html">Conversiones entre Bases</a></li>
                             <li><a href="sistema-binario.html">Sistema Binario</a></li>
                             <li><a href="sistema-octal.html">Sistema Octal</a></li>
                             <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
-                            <li><a href="operaciones-binarias.html">Operaciones Binarias</a></li>
                         </ul>
                     </li>
                     <li class="navbar-item dropdown">
-                        <a href="#" class="navbar-link dropdown-toggle">
-                            Álgebra de Boole
-                            <i class="arrow-down"></i>
-                        </a>
+                        <a href="#" class="navbar-link dropdown-toggle active">Operaciones Binarias<i class="arrow-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="suma-binaria.html">Suma de Números Binarios</a></li>
+                            <li><a href="resta-binaria.html">Resta de Números Binarios</a></li>
+                            <li><a href="multiplicacion-binaria.html">Multiplicación de Números Binarios</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle active">Álgebra de Boole<i class="arrow-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html" class="active">Fundamentos</a></li>
                             <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
                             <li><a href="leyes-boole.html">Leyes de Boole</a></li>
                             <li><a href="simplificacion.html">Simplificación de Expresiones</a></li>
@@ -47,10 +48,7 @@
                         </ul>
                     </li>
                     <li class="navbar-item dropdown">
-                        <a href="#" class="navbar-link dropdown-toggle">
-                            Compuertas Lógicas
-                            <i class="arrow-down"></i>
-                        </a>
+                        <a href="#" class="navbar-link dropdown-toggle active">Compuertas Lógicas<i class="arrow-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
                             <li><a href="compuerta-and.html">Compuerta AND</a></li>
@@ -71,85 +69,37 @@
                 <h2>Fundamentos del Álgebra de Boole</h2>
                 <p>
                     El álgebra de Boole es un sistema algebraico que opera con valores de verdad 
-                    (verdadero y falso) y es fundamental para el diseño de circuitos digitales.
+                    (verdadero y falso), esencial para el diseño de circuitos digitales, representando la <strong>lógica binaria</strong>.
                 </p>
                 
-                <h3>¿Qué es el Álgebra de Boole?</h3>
+                <h3>Historia y Concepto Clave</h3>
                 <p>
-                    Desarrollada por George Boole en 1854, el álgebra booleana es un sistema matemático 
-                    que trabaja con dos valores: 0 (falso) y 1 (verdadero). Este sistema es la base 
-                    de la lógica digital y los sistemas de computación.
+                    Desarrollada por <strong>George Boole en 1854</strong>, el álgebra booleana es un sistema matemático 
+                    que trabaja exclusivamente con <strong>dos valores</strong>: <strong>0 (falso)</strong> y <strong>1 (verdadero)</strong>. 
+                    Este sistema es la base teórica de toda la lógica digital, electrónica, y los sistemas de computación modernos.
                 </p>
 
-                <h3>Operadores Básicos</h3>
+                <h3>Variables y Constantes</h3>
                 <p>
-                    Los tres operadores fundamentales del álgebra de Boole son:
-                </p>
-
-                <div class="ejemplo">
-                    <h4>1. Operador AND (·)</h4>
-                    <p>El resultado es verdadero solo cuando ambas entradas son verdaderas.</p>
-                    <pre>
-A · B = C
-
-Tabla de verdad:
-A | B | A·B
---|---|----
-0 | 0 |  0
-0 | 1 |  0
-1 | 0 |  0
-1 | 1 |  1
-                    </pre>
-                </div>
-
-                <div class="ejemplo">
-                    <h4>2. Operador OR (+)</h4>
-                    <p>El resultado es verdadero cuando al menos una entrada es verdadera.</p>
-                    <pre>
-A + B = C
-
-Tabla de verdad:
-A | B | A+B
---|---|----
-0 | 0 |  0
-0 | 1 |  1
-1 | 0 |  1
-1 | 1 |  1
-                    </pre>
-                </div>
-
-                <div class="ejemplo">
-                    <h4>3. Operador NOT (¯)</h4>
-                    <p>Invierte el valor de la entrada.</p>
-                    <pre>
-Ā = C
-
-Tabla de verdad:
-A | Ā
---|---
-0 | 1
-1 | 0
-                    </pre>
-                </div>
-
-                <h3>Aplicaciones</h3>
-                <p>
-                    El álgebra de Boole se utiliza en:
+                    En el Álgebra de Boole, las variables representan entradas y salidas del sistema lógico, 
+                    y solo pueden tomar los valores binarios 0 o 1.
                 </p>
                 <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
-                    <li>Diseño de circuitos digitales</li>
-                    <li>Programación de computadoras</li>
-                    <li>Sistemas de bases de datos</li>
-                    <li>Motores de búsqueda</li>
-                    <li>Inteligencia artificial</li>
+                    <li><strong>Variables:</strong> Se representan con letras (A, B, C, etc.).</li>
+                    <li><strong>Constantes:</strong> Son los valores 0 y 1.</li>
                 </ul>
+
+                <h3>Aplicaciones en Computación</h3>
+                <p>
+                    El Álgebra de Boole es el lenguaje fundamental que describe cómo funcionan las <strong>compuertas lógicas</strong> y, por extensión, todos los circuitos digitales complejos dentro de una computadora.
+                </p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Computación Digital. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Computación Digital. Todos los derechos reservados.</p>
         </div>
     </footer>
 
