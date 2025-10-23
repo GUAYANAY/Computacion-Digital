@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resta de Números Binarios - Computación Digital</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/operaciones-binarias.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Computación Digital</h1>
+            <nav class="navbar">
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Sistemas de Numeración
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conversiones.html">Conversiones entre Bases</a></li>
+                            <li><a href="sistema-binario.html">Sistema Binario</a></li>
+                            <li><a href="sistema-octal.html">Sistema Octal</a></li>
+                            <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Operaciones Binarias
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="suma-binaria.html">Suma de Números Binarios</a></li>
+                            <li><a href="resta-binaria.html">Resta de Números Binarios</a></li>
+                            <li><a href="multiplicacion-binaria.html">Multiplicación de Números Binarios</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Álgebra de Boole
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
+                            <li><a href="leyes-boole.html">Leyes de Boole</a></li>
+                            <li><a href="simplificacion.html">Simplificación de Expresiones</a></li>
+                            <li><a href="mapas-karnaugh.html">Mapas de Karnaugh</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Compuertas Lógicas
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
+                            <li><a href="compuerta-and.html">Compuerta AND</a></li>
+                            <li><a href="compuerta-or.html">Compuerta OR</a></li>
+                            <li><a href="compuerta-not.html">Compuerta NOT</a></li>
+                            <li><a href="compuertas-combinadas.html">Compuertas Combinadas</a></li>
+                            <li><a href="circuitos-combinacionales.html">Circuitos Combinacionales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="presentacion">
+                <h2>➖ Resta de Números Binarios</h2>
+                <p>
+                    Aprende a restar números binarios usando el método del complemento a 2 
+                    y la resta directa paso a paso.
+                </p>
+                <div class="info-box">
+                    <strong>💡 Reglas básicas:</strong> 0-0=0, 1-0=1, 1-1=0, 0-1=1 (pidiendo prestado)
+                </div>
+            </div>
+
+            <!-- Calculadora de Resta Binaria -->
+            <div class="binary-calculator-container">
+                <div class="binary-calculator-card">
+                    <h3>🧮 Calculadora de Resta Binaria</h3>
+                    
+                    <div class="binary-input-section">
+                        <div class="binary-input-group">
+                            <label for="minuendBinary">
+                                Minuendo (número del cual se resta):
+                            </label>
+                            <input type="text" id="minuendBinary" class="binary-input" 
+                                   placeholder="Ej: 1101" maxlength="16">
+                            <div class="binary-validation" id="validationMinuend"></div>
+                        </div>
+
+                        <div class="binary-input-group">
+                            <label for="subtrahendBinary">
+                                Sustraendo (número que se resta):
+                            </label>
+                            <input type="text" id="subtrahendBinary" class="binary-input" 
+                                   placeholder="Ej: 1011" maxlength="16">
+                            <div class="binary-validation" id="validationSubtrahend"></div>
+                        </div>
+                    </div>
+
+                    <button class="calculate-button" id="calculateSubtraction">
+                        ➖ Calcular Resta
+                    </button>
+
+                    <div class="operation-display" id="operationDisplay" style="display: none;">
+                        <div class="operation-number" id="displayMinuend">-</div>
+                        <div class="operation-symbol">-</div>
+                        <div class="operation-number" id="displaySubtrahend">-</div>
+                        <div class="equals-symbol">=</div>
+                        <div class="operation-result" id="displayResult">-</div>
+                    </div>
+
+                    <div class="decimal-result" id="decimalResult" style="display: none;">
+                        <div class="decimal-result-label">Equivalencia en decimal:</div>
+                        <div class="decimal-result-value" id="decimalValue">-</div>
+                    </div>
+
+                    <div class="step-explanation" id="stepExplanation">
+                        <h4>📋 Proceso Paso a Paso</h4>
+                        <div id="methodTabs" class="method-tabs">
+                            <button class="method-tab active" data-method="direct">Resta Directa</button>
+                            <button class="method-tab" data-method="complement">Complemento a 2</button>
+                        </div>
+                        <div id="visualProcess"></div>
+                        <div id="stepTable"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información teórica -->
+            <div class="info-section">
+                <h5>📚 Métodos de Resta Binaria</h5>
+                <ul class="info-list">
+                    <li><strong>Resta Directa:</strong> Restar dígito por dígito, pidiendo prestado cuando sea necesario</li>
+                    <li><strong>Complemento a 2:</strong> Convertir la resta en suma usando el complemento del sustraendo</li>
+                    <li><strong>0 - 0 = 0</strong> (sin préstamo)</li>
+                    <li><strong>1 - 0 = 1</strong> (sin préstamo)</li>
+                    <li><strong>1 - 1 = 0</strong> (sin préstamo)</li>
+                    <li><strong>0 - 1 = 1</strong> (pidiendo préstamo de la posición siguiente)</li>
+                </ul>
+            </div>
+
+            <!-- Ejemplos paso a paso -->
+            <div class="examples-section">
+                <h3>🎯 Ejemplos Detallados</h3>
+                
+                <div class="tab-content active">
+                    <div class="ejemplo">
+                        <h4>Ejemplo 1: Resta Directa</h4>
+                        <div class="visual-subtraction">
+                            <div class="addition-row">
+                                <span class="position-cell">Posición:</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>1</span>
+                                <span>0</span>
+                            </div>
+                            <div class="addition-row">
+                                <span></span>
+                                <span class="addition-number">1</span>
+                                <span class="addition-number">1</span>
+                                <span class="addition-number">0</span>
+                                <span class="addition-number">1</span>
+                            </div>
+                            <div class="addition-row">
+                                <span>-</span>
+                                <span class="addition-number">1</span>
+                                <span class="addition-number">0</span>
+                                <span class="addition-number">1</span>
+                                <span class="addition-number">1</span>
+                            </div>
+                            <div class="addition-line"></div>
+                            <div class="addition-row">
+                                <span>Préstamo:</span>
+                                <span class="subtraction-borrow">0</span>
+                                <span class="subtraction-borrow">1</span>
+                                <span class="subtraction-borrow">1</span>
+                                <span class="subtraction-borrow">0</span>
+                            </div>
+                            <div class="addition-row">
+                                <span>Resultado:</span>
+                                <span class="addition-result">0</span>
+                                <span class="addition-result">0</span>
+                                <span class="addition-result">1</span>
+                                <span class="addition-result">0</span>
+                            </div>
+                        </div>
+                        
+                        <p><strong>Explicación del proceso de préstamo:</strong></p>
+                        <ul>
+                            <li><strong>Posición 0:</strong> 1 - 1 = 0 (sin préstamo)</li>
+                            <li><strong>Posición 1:</strong> 0 - 1 → Pido préstamo → 10 - 1 = 1, pero debo 1 al préstamo</li>
+                            <li><strong>Posición 2:</strong> 1 - 0 - 1(préstamo) = 0</li>
+                            <li><strong>Posición 3:</strong> 1 - 1 = 0</li>
+                        </ul>
+                        
+                        <div class="result-step">
+                            <strong>1101₂ - 1011₂ = 0010₂ = 10₂</strong><br>
+                            <em>En decimal: 13 - 11 = 2</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Computación Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/resta-binaria.js"></script>
+</body>
+</html>

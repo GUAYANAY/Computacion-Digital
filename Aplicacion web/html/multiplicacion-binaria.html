@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicación de Números Binarios - Computación Digital</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/operaciones-binarias.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Computación Digital</h1>
+            <nav class="navbar">
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Sistemas de Numeración
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conversiones.html">Conversiones entre Bases</a></li>
+                            <li><a href="sistema-binario.html">Sistema Binario</a></li>
+                            <li><a href="sistema-octal.html">Sistema Octal</a></li>
+                            <li><a href="sistema-hexadecimal.html">Sistema Hexadecimal</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Operaciones Binarias
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="suma-binaria.html">Suma de Números Binarios</a></li>
+                            <li><a href="resta-binaria.html">Resta de Números Binarios</a></li>
+                            <li><a href="multiplicacion-binaria.html">Multiplicación de Números Binarios</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Álgebra de Boole
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fundamentos-boole.html">Fundamentos</a></li>
+                            <li><a href="operadores-logicos.html">Operadores Lógicos</a></li>
+                            <li><a href="leyes-boole.html">Leyes de Boole</a></li>
+                            <li><a href="simplificacion.html">Simplificación de Expresiones</a></li>
+                            <li><a href="mapas-karnaugh.html">Mapas de Karnaugh</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">
+                            Compuertas Lógicas
+                            <i class="arrow-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="compuertas-basicas.html">Compuertas Básicas</a></li>
+                            <li><a href="compuerta-and.html">Compuerta AND</a></li>
+                            <li><a href="compuerta-or.html">Compuerta OR</a></li>
+                            <li><a href="compuerta-not.html">Compuerta NOT</a></li>
+                            <li><a href="compuertas-combinadas.html">Compuertas Combinadas</a></li>
+                            <li><a href="circuitos-combinacionales.html">Circuitos Combinacionales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="presentacion">
+                <h2>✖️ Multiplicación de Números Binarios</h2>
+                <p>
+                    Aprende a multiplicar números binarios usando el método tradicional paso a paso. 
+                    La multiplicación binaria es similar a la decimal pero más simple.
+                </p>
+                <div class="info-box">
+                    <strong>💡 Reglas básicas:</strong> 0×0=0, 0×1=0, 1×0=0, 1×1=1
+                </div>
+            </div>
+
+            <!-- Calculadora de Multiplicación Binaria -->
+            <div class="binary-calculator-container">
+                <div class="binary-calculator-card">
+                    <h3>🧮 Calculadora de Multiplicación Binaria</h3>
+                    
+                    <div class="binary-input-section">
+                        <div class="binary-input-group">
+                            <label for="multiplicandBinary">
+                                Multiplicando (primer número):
+                            </label>
+                            <input type="text" id="multiplicandBinary" class="binary-input" 
+                                   placeholder="Ej: 1101" maxlength="12">
+                            <div class="binary-validation" id="validationMultiplicand"></div>
+                        </div>
+
+                        <div class="binary-input-group">
+                            <label for="multiplierBinary">
+                                Multiplicador (segundo número):
+                            </label>
+                            <input type="text" id="multiplierBinary" class="binary-input" 
+                                   placeholder="Ej: 1011" maxlength="12">
+                            <div class="binary-validation" id="validationMultiplier"></div>
+                        </div>
+                    </div>
+
+                    <button class="calculate-button" id="calculateMultiplication">
+                        ✖️ Calcular Multiplicación
+                    </button>
+
+                    <div class="operation-display" id="operationDisplay" style="display: none;">
+                        <div class="operation-number" id="displayMultiplicand">-</div>
+                        <div class="operation-symbol">×</div>
+                        <div class="operation-number" id="displayMultiplier">-</div>
+                        <div class="equals-symbol">=</div>
+                        <div class="operation-result" id="displayResult">-</div>
+                    </div>
+
+                    <div class="decimal-result" id="decimalResult" style="display: none;">
+                        <div class="decimal-result-label">Equivalencia en decimal:</div>
+                        <div class="decimal-result-value" id="decimalValue">-</div>
+                    </div>
+
+                    <div class="step-explanation" id="stepExplanation">
+                        <h4>📋 Proceso Paso a Paso</h4>
+                        <div id="visualProcess"></div>
+                        <div id="stepTable"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información teórica -->
+            <div class="info-section">
+                <h5>📚 ¿Cómo funciona la multiplicación binaria?</h5>
+                <ul class="info-list">
+                    <li><strong>0 × 0 = 0</strong></li>
+                    <li><strong>0 × 1 = 0</strong></li>
+                    <li><strong>1 × 0 = 0</strong></li>
+                    <li><strong>1 × 1 = 1</strong></li>
+                    <li><strong>Proceso:</strong> Multiplicar cada dígito del multiplicador por el multiplicando</li>
+                    <li><strong>Desplazamiento:</strong> Cada producto parcial se desplaza una posición a la izquierda</li>
+                    <li><strong>Suma final:</strong> Se suman todos los productos parciales</li>
+                </ul>
+            </div>
+
+            <!-- Ejemplos paso a paso -->
+            <div class="examples-section">
+                <h3>🎯 Ejemplos Detallados</h3>
+                
+                <div class="tab-content active">
+                    <div class="ejemplo">
+                        <h4>Ejemplo 1: Multiplicación Simple</h4>
+                        <div class="visual-multiplication">
+                            <div class="multiplication-step">
+                                <div class="multiplication-step-title">Configuración inicial:</div>
+                                <div class="multiplication-partial">
+                                    <div>    1101  (13 en decimal)</div>
+                                    <div>×   1011  (11 en decimal)</div>
+                                    <div>--------</div>
+                                </div>
+                            </div>
+
+                            <div class="multiplication-step">
+                                <div class="multiplication-step-title">Paso 1: 1101 × 1 (bit 0)</div>
+                                <div class="multiplication-partial">1101</div>
+                            </div>
+
+                            <div class="multiplication-step">
+                                <div class="multiplication-step-title">Paso 2: 1101 × 1 (bit 1, desplazado)</div>
+                                <div class="multiplication-partial">11010</div>
+                            </div>
+
+                            <div class="multiplication-step">
+                                <div class="multiplication-step-title">Paso 3: 1101 × 0 (bit 2, desplazado)</div>
+                                <div class="multiplication-partial">000000</div>
+                            </div>
+
+                            <div class="multiplication-step">
+                                <div class="multiplication-step-title">Paso 4: 1101 × 1 (bit 3, desplazado)</div>
+                                <div class="multiplication-partial">1101000</div>
+                            </div>
+
+                            <div class="multiplication-step">
+                                <div class="multiplication-step-title">Suma de productos parciales:</div>
+                                <div class="multiplication-partial">
+                                    <div>   0001101</div>
+                                    <div>   0011010</div>
+                                    <div>   0000000</div>
+                                    <div>+  1101000</div>
+                                    <div>-----------</div>
+                                    <div>   10001111</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-step">
+                            <strong>1101₂ × 1011₂ = 10001111₂</strong><br>
+                            <em>En decimal: 13 × 11 = 143</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Computación Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/multiplicacion-binaria.js"></script>
+</body>
+</html>
